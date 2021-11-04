@@ -144,7 +144,6 @@ class Tour extends Model
         'prev_tour' => 'nullable|exists:tours,id',
         'next_tour' => 'nullable|exists:tours,id',
         'image' => 'required|file|image|max:100000',
-        'alias' => 'required|string|max:500',
         'title_ru' => 'required|string|max:500',
         'title_kz' => 'required|string|max:500',
         'title_en' => 'required|string|max:500',

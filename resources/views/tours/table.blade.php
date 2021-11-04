@@ -5,15 +5,14 @@
             <th>Зал</th>
         <th>Предыдущий тур</th>
         <th>Следующий тур</th>
-        <th>Image</th>
-        <th>Alias</th>
-        <th>Title Ru</th>
-        <th>Title Kz</th>
-        <th>Title En</th>
-        <th>Title De</th>
-        <th>Title Fr</th>
-        <th>Title Es</th>
-        <th>Title Tr</th>
+            <th>Изображение</th>
+            <th>Наименование на русском</th>
+            <th>Наименование на казахском</th>
+            <th>Наименование на английском</th>
+            <th>Наименование на немецком</th>
+            <th>Наименование на французском</th>
+            <th>Наименование на испанском</th>
+            <th>Наименование на турецком</th>
             <th>Аудио на русском</th>
             <th>Аудио на казахском</th>
             <th>Аудио на английском</th>
@@ -46,13 +45,82 @@
             <td>{{ $tour->title_fr }}</td>
             <td>{{ $tour->title_es }}</td>
             <td>{{ $tour->title_tr }}</td>
-            <td>{{ $tour->audio_ru }}</td>
-            <td>{{ $tour->audio_kz }}</td>
-            <td>{{ $tour->audio_en }}</td>
-            <td>{{ $tour->audio_de }}</td>
-            <td>{{ $tour->audio_fr }}</td>
-            <td>{{ $tour->audio_es }}</td>
-            <td>{{ $tour->audio_tr }}</td>
+                <td>
+                    @if($tour->audio_ru)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_ru") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+                <td>
+                    @if($tour->audio_kz)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_kz") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+                <td>@if($tour->audio_en)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_en") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif</td>
+                <td>
+                    @if($tour->audio_de)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_de") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+                <td>
+                    @if($tour->audio_fr)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_fr") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+
+                <td>
+                    @if($tour->audio_es)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_es") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+                <td>
+                    @if($tour->audio_tr)
+                        <audio
+                            controls
+                            src="{{ $tour->getFile("audio_tr") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
             <td>{{ $tour->video_ru }}</td>
             <td>{{ $tour->video_kz }}</td>
             <td>{{ $tour->video_en }}</td>

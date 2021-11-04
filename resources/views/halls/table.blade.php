@@ -95,9 +95,40 @@
 
                 @endif
             </td>
-            <td>{{ $hall->audio_fr }}</td>
-            <td>{{ $hall->audio_es }}</td>
-            <td>{{ $hall->audio_tr }}</td>
+                <td>
+                    @if($hall->audio_fr)
+                        <audio
+                            controls
+                            src="{{ $hall->getFile("audio_fr") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+
+                <td>
+                    @if($hall->audio_es)
+                        <audio
+                            controls
+                            src="{{ $hall->getFile("audio_es") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
+                <td>
+                    @if($hall->audio_tr)
+                        <audio
+                            controls
+                            src="{{ $hall->getFile("audio_tr") }}">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+
+                    @endif
+                </td>
             <td>{{ $hall->video_ru }}</td>
             <td>{{ $hall->video_kz }}</td>
             <td>{{ $hall->video_en }}</td>
