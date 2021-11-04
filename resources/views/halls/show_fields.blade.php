@@ -1,7 +1,8 @@
 <!-- Image Field -->
 <div class="col-sm-12">
     {!! Form::label('image', 'Изображение:') !!}
-    <p>{{ $hall->image }}</p>
+    <hr>
+    <img src="{{ $hall->getFile("image") }}" style="max-width: 320px">
 </div>
 
 <!-- Title Ru Field -->
@@ -91,43 +92,99 @@
 <!-- Audio Ru Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_ru', 'Аудио на русском (необязательно):') !!}
-    <p>{{ $hall->audio_ru }}</p>
+    @if($hall->audio_ru)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_ru") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio Kz Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_kz', 'Аудио на казахском (необязательно):') !!}
-    <p>{{ $hall->audio_kz }}</p>
+    @if($hall->audio_kz)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_kz") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio En Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_en', 'Аудио на английском (необязательно):') !!}
-    <p>{{ $hall->audio_en }}</p>
+    @if($hall->audio_en)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_en") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio De Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_de', 'Аудио на немецком (необязательно):') !!}
-    <p>{{ $hall->audio_de }}</p>
+    @if($hall->audio_de)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_de") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio Fr Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_fr', 'Аудио на французском (необязательно):') !!}
-    <p>{{ $hall->audio_fr }}</p>
+    @if($hall->audio_fr)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_fr") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio Es Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_es', 'Аудио на испанском (необязательно):') !!}
-    <p>{{ $hall->audio_es }}</p>
+    @if($hall->audio_es)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_es") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Audio Tr Field -->
 <div class="col-sm-12">
     {!! Form::label('audio_tr', 'Аудио на турецком (необязательно):') !!}
-    <p>{{ $hall->audio_tr }}</p>
+    @if($hall->audio_tr)
+        <hr><audio
+            controls
+            src="{{ $hall->getFile("audio_tr") }}">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio><hr>
+
+    @endif
 </div>
 
 <!-- Video Ru Field -->

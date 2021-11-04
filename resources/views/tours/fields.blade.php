@@ -7,13 +7,13 @@
 <!-- Prev Tour Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('prev_tour', 'Предыдуший тур (необязательно):') !!}
-    {!! Form::number('prev_tour', null, ['class' => 'form-control']) !!}
+    {!! Form::select('prev_tour', \App\Models\Tour::pluck("title_ru","id")->toArray(), null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Next Tour Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('next_tour', 'Следующий тур (необязательно):') !!}
-    {!! Form::number('next_tour', null, ['class' => 'form-control']) !!}
+    {!! Form::select('next_tour',\App\Models\Tour::pluck("title_ru","id")->toArray(), null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Image Field -->

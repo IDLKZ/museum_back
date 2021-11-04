@@ -202,4 +202,6 @@ class Hall extends Model
     {
         return $this->hasMany(\App\Models\Tour::class, 'hall_id');
     }
+
+
 }

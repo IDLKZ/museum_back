@@ -33,7 +33,7 @@
         <tbody>
         @foreach($tours as $tour)
             <tr>
-                <td>{{ $tour->hall_id }}</td>
+                <td>{{ $tour->hall->title_ru }}</td>
             <td>{{ $tour->prev_tour }}</td>
             <td>{{ $tour->next_tour }}</td>
             <td>{{ $tour->image }}</td>

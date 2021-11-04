@@ -33,7 +33,6 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
           integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
           crossorigin="anonymous"/>
-
     @stack('third_party_stylesheets')
 
     @stack('page_css')
@@ -53,14 +52,14 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                    <img src="{{asset("images/avatar.gif")}}"
                          class="user-image img-circle elevation-2" alt="User Image">
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
-                        <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                        <img src="{{asset("images/avatar.gif")}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
@@ -70,7 +69,6 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                         <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Выход

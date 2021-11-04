@@ -13,7 +13,22 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//Hall
+Route::get("/halls",[\App\Http\Controllers\Api\HallController::class,"allHall"]);
+Route::get("/single-hall/{alias}",[\App\Http\Controllers\Api\HallController::class,"singleHall"]);
+//Tour
+Route::get("/tours/{hall_id}",[\App\Http\Controllers\Api\TourController::class,"tours"]);
+Route::get("/single-tour/{alias}",[\App\Http\Controllers\Api\TourController::class,"singleTour"]);
+//ThirdModel
+Route::get("/thirdModels/{tour_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"thirdModels"]);
+Route::get("/single-thirdModel/{alias}",[\App\Http\Controllers\Api\ThirdModelController::class,"singlethirdModel"]);
+//News
+Route::get("/news",[\App\Http\Controllers\Api\NewsController::class,"news"]);
+Route::get("/single-news/{alias}",[\App\Http\Controllers\Api\NewsController::class,"singleNews"]);
+//About
+Route::get("/about",[\App\Http\Controllers\Api\AboutController::class,"index"]);
+//F.A.Q
+Route::get("/faq",[\App\Http\Controllers\Api\FaqController::class,"index"]);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+

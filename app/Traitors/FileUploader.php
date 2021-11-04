@@ -30,6 +30,9 @@ trait FileUploader
 
         self::deleting(function($model){
             $model->removeFile('image');
+            $model->removeFile('wavefront');
+            $model->removeFile('texture');
+            $model->removeFile('texture_image');
             $model->removeAudio();
         });
 

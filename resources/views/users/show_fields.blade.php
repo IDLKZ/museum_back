@@ -10,11 +10,6 @@
     <p>{{ $user->email }}</p>
 </div>
 
-<!-- Password Field -->
-<div class="col-sm-12">
-    {!! Form::label('password', 'Пароль:') !!}
-    <p>{{ $user->password }}</p>
-</div>
 
 <!-- Phone Field -->
 <div class="col-sm-12">
