@@ -31,3 +31,4 @@ Route::resource('fAQS', App\Http\Controllers\FAQController::class);
 Route::resource('galleries', App\Http\Controllers\GalleryController::class);
 });
 
+Route::post("QR",[\App\Http\Controllers\QRGenerator::class,"index"])->name("qrcode");

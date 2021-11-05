@@ -74,14 +74,6 @@
     </a>
 </li>
 
-
-<li class="nav-item">
-    <a href="{{ route('galleries.index') }}"
-       class="nav-link {{ Request::is('galleries*') ? 'active' : '' }}">
-        <p>Galleries</p>
-    </a>
-</li>
-
 <li class="nav-item">
     <a href="#" class="nav-link"
        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

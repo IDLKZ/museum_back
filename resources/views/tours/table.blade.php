@@ -6,6 +6,7 @@
         <th>Предыдущий тур</th>
         <th>Следующий тур</th>
             <th>Изображение</th>
+            <th>Панорама</th>
             <th>Наименование на русском</th>
             <th>Наименование на казахском</th>
             <th>Наименование на английском</th>
@@ -36,7 +37,8 @@
                 <td>{{ $tour->hall->title_ru }}</td>
             <td>{{ $tour->prev_tour }}</td>
             <td>{{ $tour->next_tour }}</td>
-            <td>{{ $tour->image }}</td>
+            <td><img src="{{ $tour->getFile("image") }}" style="max-width: 120px"> </td>
+            <td><img src="{{ $tour->getFile("panorama") }}" style="max-width: 120px"> </td>
             <td>{{ $tour->alias }}</td>
             <td>{{ $tour->title_ru }}</td>
             <td>{{ $tour->title_kz }}</td>
@@ -129,8 +131,16 @@
             <td>{{ $tour->video_es }}</td>
             <td>{{ $tour->video_tr }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['tours.destroy', $tour->id], 'method' => 'delete']) !!}
+
                     <div class='btn-group'>
+                        {!! Form::open(['route' => ['qrcode'], 'method' => 'post']) !!}
+                        <input type="hidden" name="id" value="{{$tour->id}}">
+                        <input type="hidden" name="type" value="tour">
+                        <button type="submit"
+                                class='btn btn-success btn-xs'>
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                        {!! Form::close() !!}
                         <a href="{{ route('tours.show', [$tour->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
@@ -139,9 +149,11 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>
+                        {!! Form::open(['route' => ['tours.destroy', $tour->id], 'method' => 'delete']) !!}
                         {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::close() !!}
                     </div>
-                    {!! Form::close() !!}
+
                 </td>
             </tr>
         @endforeach

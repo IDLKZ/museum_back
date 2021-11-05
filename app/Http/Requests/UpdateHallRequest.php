@@ -26,7 +26,7 @@ class UpdateHallRequest extends FormRequest
     public function rules()
     {
         $rules = Hall::$rules;
-        
+        $rules["image"] = 'nullable|sometimes|image|max:150000';
         return $rules;
     }
 }

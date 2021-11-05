@@ -26,7 +26,9 @@ class UpdateTourRequest extends FormRequest
     public function rules()
     {
         $rules = Tour::$rules;
-        
+        $rules["image"] = 'nullable|sometimes|image|max:150000';
+        $rules["panorama"] = 'nullable|sometimes|image|max:150000';
+
         return $rules;
     }
 }

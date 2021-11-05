@@ -26,7 +26,8 @@ class UpdateNewsRequest extends FormRequest
     public function rules()
     {
         $rules = News::$rules;
-        
+        $rules["image"] = 'nullable|sometimes|image|max:150000';
+
         return $rules;
     }
 }

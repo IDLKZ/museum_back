@@ -3,6 +3,7 @@
         <thead>
         <tr>
             <th>Изображение</th>
+            <th>Зал</th>
         <th>3д объект</th>
         <th>Текстура</th>
         <th>Изображения текстуры</th>
@@ -41,6 +42,7 @@
         @foreach($thirdModels as $thirdModel)
             <tr>
                 <td><img src="{{ $thirdModel->getFile("image")}}" style="max-width: 320px"> </td>
+                <td>{{ $thirdModel->hall->title_ru}} </td>
             <td>{{ $thirdModel->wavefront }}</td>
             <td>{{ $thirdModel->texture }}</td>
             <td>{{ $thirdModel->texture_image }}</td>
@@ -143,8 +145,16 @@
             <td>{{ $thirdModel->video_es }}</td>
             <td>{{ $thirdModel->video_tr }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['thirdModels.destroy', $thirdModel->id], 'method' => 'delete']) !!}
+
                     <div class='btn-group'>
+                        {!! Form::open(['route' => ['qrcode'], 'method' => 'post']) !!}
+                        <input type="hidden" name="id" value="{{$thirdModel->id}}">
+                        <input type="hidden" name="type" value="models">
+                        <button type="submit"
+                                class='btn btn-success btn-xs'>
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                        {!! Form::close() !!}
                         <a href="{{ route('thirdModels.show', [$thirdModel->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
@@ -153,9 +163,11 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>
+                        {!! Form::open(['route' => ['thirdModels.destroy', $thirdModel->id], 'method' => 'delete']) !!}
                         {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::close() !!}
                     </div>
-                    {!! Form::close() !!}
+
                 </td>
             </tr>
         @endforeach

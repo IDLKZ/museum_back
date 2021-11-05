@@ -24,6 +24,14 @@
     <hr>
 </div>
 
+<!-- Image Field -->
+<div class="col-sm-12">
+    {!! Form::label('panorama', 'Панорама:') !!}
+    <hr>
+    <img src="{{ $tour->getFile("panorama") }}" style="max-width: 320px">
+    <hr>
+</div>
+
 <!-- Alias Field -->
 <div class="col-sm-12">
     {!! Form::label('alias', 'Ссылка:') !!}

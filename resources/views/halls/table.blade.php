@@ -38,6 +38,7 @@
         @foreach($halls as $hall)
             <tr>
                 <td><img src="{{ $hall->getFile("image") }}"></td>
+
             <td>{{ $hall->alias }}</td>
             <td>{{ $hall->title_ru }}</td>
             <td>{{ $hall->title_kz }}</td>
@@ -137,8 +138,16 @@
             <td>{{ $hall->video_es }}</td>
             <td>{{ $hall->video_tr }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['halls.destroy', $hall->id], 'method' => 'delete']) !!}
+
                     <div class='btn-group'>
+                        {!! Form::open(['route' => ['qrcode'], 'method' => 'post']) !!}
+                        <input type="hidden" name="id" value="{{$hall->id}}">
+                        <input type="hidden" name="type" value="hall">
+                        <button type="submit"
+                           class='btn btn-success btn-xs'>
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                        {!! Form::close() !!}
                         <a href="{{ route('halls.show', [$hall->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
@@ -147,9 +156,11 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>
+                        {!! Form::open(['route' => ['halls.destroy', $hall->id], 'method' => 'delete']) !!}
                         {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Вы уверены?')"]) !!}
+                        {!! Form::close() !!}
                     </div>
-                    {!! Form::close() !!}
+
                 </td>
             </tr>
         @endforeach

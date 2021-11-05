@@ -74,6 +74,7 @@ class ThirdModel extends Model
     }
 
     public $fillable = [
+        'hall_id',
         'image',
         'wavefront',
         'texture',
@@ -115,6 +116,7 @@ class ThirdModel extends Model
      * @var array
      */
     protected $casts = [
+        'hall_id' => 'integer',
         'id' => 'integer',
         'image' => 'string',
         'wavefront' => 'string',
@@ -157,6 +159,7 @@ class ThirdModel extends Model
      * @var array
      */
     public static $rules = [
+        'hall_id' => 'required|exists:halls,id',
         'image' => 'required|file|image|max:100000',
         'wavefront' => 'required|file|max:100000',
         'texture' => 'required|file|max:100000',
@@ -199,5 +202,10 @@ class ThirdModel extends Model
     public function galleries()
     {
         return $this->hasMany(\App\Models\Gallery::class, 'model_id');
+    }
+
+    public function hall()
+    {
+        return $this->belongsTo(\App\Models\Hall::class, 'hall_id');
     }
 }

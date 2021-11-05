@@ -97,7 +97,7 @@ class About extends Model
      * @var array
      */
     public static $rules = [
-        'image' => 'required|image|max:1500',
+        'image' => 'required|image|max:150000',
         'title_ru' => 'required|string|max:500',
         'title_kz' => 'required|string|max:500',
         'title_en' => 'required|string|max:500',

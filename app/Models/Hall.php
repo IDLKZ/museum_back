@@ -203,5 +203,10 @@ class Hall extends Model
         return $this->hasMany(\App\Models\Tour::class, 'hall_id');
     }
 
+    public function thirdModels()
+    {
+        return $this->hasMany(\App\Models\ThirdModel::class, 'hall_id');
+    }
+
 
 }

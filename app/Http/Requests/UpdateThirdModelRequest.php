@@ -26,7 +26,10 @@ class UpdateThirdModelRequest extends FormRequest
     public function rules()
     {
         $rules = ThirdModel::$rules;
-        
+        $rules["image"] = 'nullable|sometimes|image|max:150000';
+        $rules["wavefront"] = 'nullable|sometimes|file|max:150000';
+        $rules["texture"] = 'nullable|sometimes|file|max:150000';
+        $rules["texture_image"] = 'nullable|sometimes|file|max:150000';
         return $rules;
     }
 }

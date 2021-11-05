@@ -58,6 +58,7 @@ class TourController extends AppBaseController
 
         $tour = $this->tourRepository->create($input);
         $tour->uploadFile($request["image"],"image");
+        $tour->uploadFile($request["panorama"],"panorama");
         $tour->uploadAudio($request);
         Flash::success('Тур успешно сохранен.');
 
@@ -124,6 +125,7 @@ class TourController extends AppBaseController
 
         $tour = $this->tourRepository->update($request->all(), $id);
         $tour->uploadFile($request["image"],"image");
+        $tour->uploadFile($request["panorama"],"panorama");
         $tour->uploadAudio($request);
         Flash::success('Тур успешно обновлен.');
 

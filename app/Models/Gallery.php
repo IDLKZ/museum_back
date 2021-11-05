@@ -65,11 +65,11 @@ class Gallery extends Model
      * @var array
      */
     public static $rules = [
-        'image' => 'required|string|max:500',
-        'hall_id' => 'required',
-        'tour_id' => 'required',
-        'model_id' => 'required',
-        'news_id' => 'required',
+        'image' => 'required|file|image|max:100000',
+        'hall_id' => 'sometimes|nullable|exists:halls,id',
+        'tour_id' => 'sometimes|nullable|exists:tours,id',
+        'model_id' => 'sometimes|nullable|exists:3models,id',
+        'news_id' => 'sometimes|nullable|exists:news,id',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];

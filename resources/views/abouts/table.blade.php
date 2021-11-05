@@ -25,7 +25,7 @@
         <tbody>
         @foreach($abouts as $about)
             <tr>
-                <td>{{ $about->image }}</td>
+                <td><img src="{{ $about->getFile("image") }}" width="120"> </td>
             <td>{{ $about->title_ru }}</td>
             <td>{{ $about->title_kz }}</td>
             <td>{{ $about->title_en }}</td>
@@ -40,7 +40,7 @@
             <td>{{ $about->description_fr }}</td>
             <td>{{ $about->description_es }}</td>
             <td>{{ $about->description_tr }}</td>
-            <td>{{ $about->status }}</td>
+            <td>{{ $about->status == 1 ? "Aктивная" : "Не активно" }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['abouts.destroy', $about->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

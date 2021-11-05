@@ -1,3 +1,8 @@
+<!-- Hall Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('hall_id', 'Зал:') !!}
+    {!! Form::select('hall_id', \App\Models\Hall::pluck("title_ru","id")->toArray(),null, ['class' => 'form-control']) !!}
+</div>
 <!-- Image Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image', 'Изображение:') !!}

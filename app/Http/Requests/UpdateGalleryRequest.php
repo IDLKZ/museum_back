@@ -26,7 +26,8 @@ class UpdateGalleryRequest extends FormRequest
     public function rules()
     {
         $rules = Gallery::$rules;
-        
+        $rules["image"] = 'nullable|sometimes|image|max:150000';
+
         return $rules;
     }
 }

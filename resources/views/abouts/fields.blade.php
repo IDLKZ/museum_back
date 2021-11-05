@@ -90,5 +90,5 @@
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Активен:') !!}
-    {!! Form::select('status',[0=>"Не активен",1=>"Не активен"] ,null, ['class' => 'form-control']) !!}
+    {!! Form::select('status',[0=>"Не активен",1=>"Активен"] ,null, ['class' => 'form-control']) !!}
 </div>

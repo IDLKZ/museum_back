@@ -22,6 +22,11 @@
     {!! Form::file('image', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
 </div>
 
+<!-- Image Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('panorama', 'Панорама:') !!}
+    {!! Form::file('panorama', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
+</div>
 
 <!-- Title Ru Field -->
 <div class="form-group col-sm-6">

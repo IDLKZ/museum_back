@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HallController extends Controller
 {
     function allHall(){
-        $halls = Hall::with(["galleries","tours"])->get();
+        $halls = Hall::with(["galleries","tours","thirdModels"])->get();
         return response()->json($halls);
     }
 
@@ -17,4 +17,6 @@ class HallController extends Controller
         $hall = Hall::where("alias",$alias)->with(["galleries","tours"])->first();
         return response()->json($hall);
     }
+
+
 }
