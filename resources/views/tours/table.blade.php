@@ -37,7 +37,7 @@
                 <td>{{ $tour->hall->title_ru }}</td>
             <td>{{ $tour->prev_tour }}</td>
             <td>{{ $tour->next_tour }}</td>
-            <td><img src="{{ $tour->getFile("image") }}" style="max-width: 120px"> </td>
+            <td><img src="{{ $tour->getFile("image") }}"  style="max-width: 120px"> </td>
             <td><img src="{{ $tour->getFile("panorama") }}" style="max-width: 120px"> </td>
             <td>{{ $tour->alias }}</td>
             <td>{{ $tour->title_ru }}</td>

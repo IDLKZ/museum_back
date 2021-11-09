@@ -37,7 +37,7 @@
         <tbody>
         @foreach($halls as $hall)
             <tr>
-                <td><img src="{{ $hall->getFile("image") }}"></td>
+                <td><img src="{{ $hall->getFile("image") }}" style="max-width: 200px"></td>
 
             <td>{{ $hall->alias }}</td>
             <td>{{ $hall->title_ru }}</td>
