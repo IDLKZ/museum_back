@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TourController extends Controller
 {
     function tours($hall_id){
-        $tours = Tour::where("hall_id",$hall_id)->with(["galleries","hall"])->get();
+        $tours = Tour::where("hall_id",$hall_id)->with(["galleries","hall","prevTour","nextTour"])->get();
         return response()->json($tours);
     }
 
