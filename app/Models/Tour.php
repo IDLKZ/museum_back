@@ -186,4 +186,12 @@ class Tour extends Model
     {
         return $this->hasMany(\App\Models\Gallery::class, 'tour_id');
     }
+
+    public function prevTour(){
+        return $this->belongsTo(\App\Models\Tour::class, 'prev_tour');
+    }
+
+    public function nextTour(){
+        return $this->belongsTo(\App\Models\Tour::class, 'next_tour');
+    }
 }

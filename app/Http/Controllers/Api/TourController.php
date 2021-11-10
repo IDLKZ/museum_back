@@ -14,7 +14,7 @@ class TourController extends Controller
     }
 
     function singleTour($alias){
-        $tours = Tour::where("alias",$alias)->with(["galleries","hall"])->first();
+        $tours = Tour::where("alias",$alias)->with(["galleries","hall","prevTour","nextTour"])->first();
         return response()->json($tours);
     }
 }

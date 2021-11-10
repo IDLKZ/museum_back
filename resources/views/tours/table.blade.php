@@ -35,8 +35,8 @@
         @foreach($tours as $tour)
             <tr>
                 <td>{{ $tour->hall->title_ru }}</td>
-            <td>{{ $tour->prev_tour }}</td>
-            <td>{{ $tour->next_tour }}</td>
+            <td>{{$tour->prev_tour ? $tour->prevTour->title_ru : "-" }}</td>
+            <td>{{ $tour->next_tour ? $tour->nextTour->title_ru : "-"}}</td>
             <td><img src="{{ $tour->getFile("image") }}"  style="max-width: 120px"> </td>
             <td><img src="{{ $tour->getFile("panorama") }}" style="max-width: 120px"> </td>
             <td>{{ $tour->alias }}</td>
