@@ -155,6 +155,10 @@
                             <i class="fas fa-qrcode"></i>
                         </button>
                         {!! Form::close() !!}
+                        <a href="{{ route('model3d',$thirdModel->alias) }}"
+                           class='btn btn-default btn-xs'>
+                            <i class="far fa-cube"></i>
+                        </a>
                         <a href="{{ route('thirdModels.show', [$thirdModel->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>

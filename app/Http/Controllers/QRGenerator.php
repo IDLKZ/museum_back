@@ -22,7 +22,7 @@ class QRGenerator extends Controller
                 $tour ? $alias = "tour" . "/" . $tour->id : null;
                 break;
             }
-            case "models":{
+            case "thirdmodels":{
                 $models = ThirdModel::firstWhere("id",$request->get("id"));
                 $models ? $alias = "thirdModel" . "/" . $models->id : null;
                 break;
