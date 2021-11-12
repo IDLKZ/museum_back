@@ -20,7 +20,7 @@ Route::get("/single-hall/{alias}",[\App\Http\Controllers\Api\HallController::cla
 Route::get("/tours/{hall_id}",[\App\Http\Controllers\Api\TourController::class,"tours"]);
 Route::get("/single-tour/{alias}",[\App\Http\Controllers\Api\TourController::class,"singleTour"]);
 //ThirdModel
-Route::get("/thirdModels/{tour_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"thirdModels"]);
+Route::get("/thirdModels/{hall_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"thirdModels"]);
 Route::get("/single-thirdModel/{alias}",[\App\Http\Controllers\Api\ThirdModelController::class,"singlethirdModel"]);
 //News
 Route::get("/news",[\App\Http\Controllers\Api\NewsController::class,"news"]);

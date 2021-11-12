@@ -69,6 +69,47 @@
     {!! Form::label('title_tr', 'Наименование на турецком (необяз):') !!}
     {!! Form::text('title_tr', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
 </div>
+<!-- Description Ru Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_ru', 'Описание на русском:') !!}
+    {!! Form::textarea('description_ru', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description En Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_en', 'Описание на английском:') !!}
+    {!! Form::textarea('description_en', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description Kz Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_kz', 'Описание на казахском:') !!}
+    {!! Form::textarea('description_kz', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description De Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_de', 'Описание на немецком (необязательно):') !!}
+    {!! Form::textarea('description_de', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description Fr Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_fr', 'Описание на французском (необязательно):') !!}
+    {!! Form::textarea('description_fr', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description Es Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_es', 'Описание на испанском (необязательно):') !!}
+    {!! Form::textarea('description_es', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Description Tr Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('description_tr', 'Описание на турецком (необязательно):') !!}
+    {!! Form::textarea('description_tr', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Audio Ru Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('audio_ru', 'Аудио на русском (необязательно):') !!}
