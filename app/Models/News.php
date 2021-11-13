@@ -101,7 +101,9 @@ class News extends Model
         'description_de' => 'string',
         'description_fr' => 'string',
         'description_es' => 'string',
-        'description_tr' => 'string'
+        'description_tr' => 'string',
+        'created_at' => 'datetime:d.m.Y H:m',
+        'updated_at' => 'datetime:d.m.Y H:m'
     ];
 
     /**

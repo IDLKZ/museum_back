@@ -24,13 +24,7 @@
         <th>Аудио на французском</th>
         <th>Аудио на испанском</th>
         <th>Аудио на турецком</th>
-        <th>Видео ссылка на русском</th>
-        <th>Видео ссылка на казахском</th>
-        <th>Видео ссылка на английском</th>
-        <th>Видео ссылка на немецком</th>
-        <th>Видео ссылка на французском</th>
-        <th>Видео ссылка на испанском</th>
-        <th>Видео ссылка на турецком</th>
+
             <th colspan="3">Действия</th>
         </tr>
         </thead>
@@ -47,13 +41,7 @@
             <td>{{ $hall->title_fr }}</td>
             <td>{{ $hall->title_es }}</td>
             <td>{{ $hall->title_tr }}</td>
-            <td>{{ $hall->description_ru }}</td>
-            <td>{{ $hall->description_en }}</td>
-            <td>{{ $hall->description_kz }}</td>
-            <td>{{ $hall->description_de }}</td>
-            <td>{{ $hall->description_fr }}</td>
-            <td>{{ $hall->description_es }}</td>
-            <td>{{ $hall->description_tr }}</td>
+
             <td>
                 @if($hall->audio_ru)
                     <audio

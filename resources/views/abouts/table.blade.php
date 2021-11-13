@@ -10,13 +10,7 @@
             <th>Наименование на французском</th>
             <th>Наименование на испанском</th>
             <th>Наименование на турецком</th>
-            <th>Описание на русском</th>
-            <th>Описание на английском</th>
-            <th>Описание на казахском</th>
-            <th>Описание на немецком</th>
-            <th>Описание на французском</th>
-            <th>Описание на испанском</th>
-            <th>Описание на турецком</th>
+
 
         <th>Статус</th>
             <th colspan="3">Действия</th>
@@ -33,13 +27,7 @@
             <td>{{ $about->title_fr }}</td>
             <td>{{ $about->title_es }}</td>
             <td>{{ $about->title_tr }}</td>
-            <td>{{ $about->description_ru }}</td>
-            <td>{{ $about->description_en }}</td>
-            <td>{{ $about->description_kz }}</td>
-            <td>{{ $about->description_de }}</td>
-            <td>{{ $about->description_fr }}</td>
-            <td>{{ $about->description_es }}</td>
-            <td>{{ $about->description_tr }}</td>
+
             <td>{{ $about->status == 1 ? "Aктивная" : "Не активно" }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['abouts.destroy', $about->id], 'method' => 'delete']) !!}

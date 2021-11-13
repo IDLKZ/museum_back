@@ -14,13 +14,7 @@
             <th>Наименование на французском</th>
             <th>Наименование на испанском</th>
             <th>Наименование на турецком</th>
-            <th>Описание на русском</th>
-            <th>Описание на английском</th>
-            <th>Описание на казахском</th>
-            <th>Описание на немецком</th>
-            <th>Описание на французском</th>
-            <th>Описание на испанском</th>
-            <th>Описание на турецком</th>
+
             <th>Аудио на русском</th>
             <th>Аудио на казахском</th>
             <th>Аудио на английском</th>
@@ -54,13 +48,7 @@
             <td>{{ $thirdModel->title_fr }}</td>
             <td>{{ $thirdModel->title_es }}</td>
             <td>{{ $thirdModel->title_tr }}</td>
-            <td>{{ $thirdModel->description_ru }}</td>
-            <td>{{ $thirdModel->description_en }}</td>
-            <td>{{ $thirdModel->description_kz }}</td>
-            <td>{{ $thirdModel->description_de }}</td>
-            <td>{{ $thirdModel->description_fr }}</td>
-            <td>{{ $thirdModel->description_es }}</td>
-            <td>{{ $thirdModel->description_tr }}</td>
+
                 <td>
                     @if($thirdModel->audio_ru)
                         <audio

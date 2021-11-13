@@ -11,13 +11,7 @@
             <th>Наименование на французском</th>
             <th>Наименование на испанском</th>
             <th>Наименование на турецком</th>
-            <th>Описание на русском</th>
-            <th>Описание на английском</th>
-            <th>Описание на казахском</th>
-            <th>Описание на немецком</th>
-            <th>Описание на французском</th>
-            <th>Описание на испанском</th>
-            <th>Описание на турецком</th>
+
             <th colspan="3">Действия</th>
         </tr>
         </thead>
@@ -33,13 +27,7 @@
             <td>{{ $news->title_fr }}</td>
             <td>{{ $news->title_es }}</td>
             <td>{{ $news->title_tr }}</td>
-            <td>{{ $news->description_ru }}</td>
-            <td>{{ $news->description_en }}</td>
-            <td>{{ $news->description_kz }}</td>
-            <td>{{ $news->description_de }}</td>
-            <td>{{ $news->description_fr }}</td>
-            <td>{{ $news->description_es }}</td>
-            <td>{{ $news->description_tr }}</td>
+
                 <td width="120">
                     {!! Form::open(['route' => ['news.destroy', $news->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
