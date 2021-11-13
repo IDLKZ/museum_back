@@ -24,6 +24,7 @@ Route::get("/thirdModels/{hall_id}",[\App\Http\Controllers\Api\ThirdModelControl
 Route::get("/single-thirdModel/{alias}",[\App\Http\Controllers\Api\ThirdModelController::class,"singlethirdModel"]);
 //News
 Route::get("/news",[\App\Http\Controllers\Api\NewsController::class,"news"]);
+Route::get("/stocks",[\App\Http\Controllers\Api\NewsController::class,"stock"]);
 Route::get("/single-news/{alias}",[\App\Http\Controllers\Api\NewsController::class,"singleNews"]);
 //About
 Route::get("/about",[\App\Http\Controllers\Api\AboutController::class,"index"]);
