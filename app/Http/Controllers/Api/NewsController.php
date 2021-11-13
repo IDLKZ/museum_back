@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     function news(){
-        $news = News::with("galleries")->orderBy("created_at","DESC")->paginate(3);
+        $news = News::with("galleries")->orderBy("created_at","DESC")->paginate(20);
         return response()->json($news);
     }
     function singleNews($alias){
