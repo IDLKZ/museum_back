@@ -137,7 +137,7 @@
                     <div class='btn-group'>
                         {!! Form::open(['route' => ['qrcode'], 'method' => 'post']) !!}
                         <input type="hidden" name="id" value="{{$thirdModel->id}}">
-                        <input type="hidden" name="type" value="models">
+                        <input type="hidden" name="type" value="thirdModel">
                         <button type="submit"
                                 class='btn btn-success btn-xs'>
                             <i class="fas fa-qrcode"></i>

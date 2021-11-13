@@ -14,17 +14,18 @@ class QRGenerator extends Controller
         switch($request->get("type")){
             case "hall":{
                 $hall = Hall::firstWhere("id",$request->get("id"));
-                $hall ? $alias = "hall" . "/" . $hall->id : null;
+                $hall ? $alias = "hall" . "/" . $hall->alias : null;
                 break;
             }
             case "tour":{
                 $tour = Tour::firstWhere("id",$request->get("id"));
-                $tour ? $alias = "tour" . "/" . $tour->id : null;
+                $tour ? $alias = "tour" . "/" . $tour->alias : null;
                 break;
             }
-            case "thirdmodels":{
+            case "thirdModel":{
+
                 $models = ThirdModel::firstWhere("id",$request->get("id"));
-                $models ? $alias = "thirdModel" . "/" . $models->id : null;
+                $models ? $alias = "thirdModel" . "/" . $models->alias : null;
                 break;
             }
         }
