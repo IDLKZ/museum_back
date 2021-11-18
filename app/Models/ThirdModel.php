@@ -210,4 +210,8 @@ class ThirdModel extends Model
     {
         return $this->belongsTo(\App\Models\Hall::class, 'hall_id');
     }
+    public function showcase()
+    {
+        return $this->belongsTo(\App\Models\Showcase::class, 'showcase_id');
+    }
 }
