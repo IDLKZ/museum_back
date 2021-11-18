@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hall;
+use App\Models\Showcase;
 use App\Models\ThirdModel;
 use App\Models\Tour;
 use Illuminate\Http\Request;
@@ -23,9 +24,13 @@ class QRGenerator extends Controller
                 break;
             }
             case "thirdModel":{
-
                 $models = ThirdModel::firstWhere("id",$request->get("id"));
                 $models ? $alias = "thirdModel" . "/" . $models->alias : null;
+                break;
+            }
+            case "showCase":{
+                $showcase = Showcase::firstWhere("id",$request->get("id"));
+                $showcase ? $alias = "showCase" . "/" . $showcase->alias : null;
                 break;
             }
         }

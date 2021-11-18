@@ -17,4 +17,8 @@ class ThirdModelController extends Controller
         $thirdModel = ThirdModel::where("alias",$alias)->with(["galleries","hall"])->first();
         return response()->json($thirdModel);
     }
+    function singleShowCase($showcase_id){
+        $thirdModels = ThirdModel::where("showcase_id",$showcase_id)->with(["galleries","hall"])->get();
+        return response()->json($thirdModels);
+    }
 }

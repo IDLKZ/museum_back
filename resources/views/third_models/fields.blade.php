@@ -1,8 +1,15 @@
 <!-- Hall Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('hall_id', 'Зал:') !!}
-    {!! Form::select('hall_id', \App\Models\Hall::pluck("title_ru","id")->toArray(),null, ['class' => 'form-control']) !!}
+    {!! Form::select('hall_id', \App\Models\Hall::pluck("title_ru","id")->toArray(),null, ['class' => 'form-control','id'=>'halls']) !!}
 </div>
+
+<!-- Texture Field --><!-- Hall Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('showcase_id', 'Витрина:') !!}
+    {!! Form::select('showcase_id', [null => "Не выбранно"],null, ['class' => 'form-control','id'=>'showcases']) !!}
+</div>
+
 <!-- Image Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image', 'Изображение:') !!}
@@ -196,3 +203,52 @@
     {!! Form::label('video_tr', 'Видео ссылка на турецком (необязательно):') !!}
     {!! Form::text('video_tr', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
 </div>
+
+
+
+
+@push("page_scripts")
+
+    <script>
+        $(document).ready( function () {
+            let showcases = (@json($showcases));
+            let thirdModel = (@json($thirdModel ?? null));
+            let halls = $("#halls").val();
+            autoSelect();
+            $("#halls").on("change",function () {
+              autoSelect();
+            })
+
+            function autoSelect(){
+                $('#showcases').find('option').remove().end().append('<option>Не выбранно</option>').val(null);
+                halls = $("#halls").val();
+                if(showcases.length > 0){
+                    for(let optionItem = 0; optionItem < showcases.length; optionItem++){
+                        if(showcases[optionItem].hall_id == halls){
+                            $('#showcases').append($('<option>', {
+                                value: showcases[optionItem].id,
+                                text : showcases[optionItem].title_ru,
+                                selected: function () {
+                                    if(thirdModel){
+                                        return showcases[optionItem].id == thirdModel.showcase_id ? true : false;
+                                    }
+                                    else{
+                                        return false;
+                                    }
+                                }
+                            }));
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+
+
+        )
+    </script>
+
+@endpush

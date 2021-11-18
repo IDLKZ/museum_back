@@ -75,6 +75,7 @@ class ThirdModel extends Model
 
     public $fillable = [
         'hall_id',
+        "showcase_id",
         'image',
         'wavefront',
         'texture',
@@ -117,6 +118,7 @@ class ThirdModel extends Model
      */
     protected $casts = [
         'hall_id' => 'integer',
+        "showcase_id"=>"integer",
         'id' => 'integer',
         'image' => 'string',
         'wavefront' => 'string',

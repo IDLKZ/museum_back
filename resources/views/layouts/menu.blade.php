@@ -30,6 +30,13 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('showcases.index') }}"
+       class="nav-link {{ Request::is('showcases*') ? 'active' : '' }}">
+        <i class="fas fa-cube"></i>
+        <p>Витрины</p>
+    </a>
+</li>
 
 
 
@@ -84,3 +91,6 @@
         @csrf
     </form>
 </li>
+
+
+

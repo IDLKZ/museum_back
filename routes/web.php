@@ -33,3 +33,6 @@ Route::resource('galleries', App\Http\Controllers\GalleryController::class);
 
 Route::post("QR",[\App\Http\Controllers\QRGenerator::class,"index"])->name("qrcode");
 Route::get("model3d/{alias}",[\App\Http\Controllers\HomeController::class,"models"])->name("model3d");
+
+
+Route::resource('showcases', App\Http\Controllers\ShowcaseController::class);

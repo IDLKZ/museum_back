@@ -22,6 +22,12 @@ Route::get("/single-tour/{alias}",[\App\Http\Controllers\Api\TourController::cla
 //ThirdModel
 Route::get("/thirdModels/{hall_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"thirdModels"]);
 Route::get("/single-thirdModel/{alias}",[\App\Http\Controllers\Api\ThirdModelController::class,"singlethirdModel"]);
+Route::get("/single-showcaseThirdModel/{showcase_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"singleShowCase"]);
+//Showcase
+Route::get("/showcases/{alias}",[\App\Http\Controllers\Api\ShowcaseController::class,"singleShowCase"]);
+
+
+
 //News
 Route::get("/news",[\App\Http\Controllers\Api\NewsController::class,"news"]);
 Route::get("/stocks",[\App\Http\Controllers\Api\NewsController::class,"stock"]);
@@ -33,3 +39,6 @@ Route::get("/faq",[\App\Http\Controllers\Api\FaqController::class,"index"]);
 
 
 
+
+
+Route::resource('third_models', App\Http\Controllers\API\ThirdModelAPIController::class);

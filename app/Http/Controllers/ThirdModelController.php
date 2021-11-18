@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateThirdModelRequest;
 use App\Http\Requests\UpdateThirdModelRequest;
+use App\Models\Showcase;
 use App\Repositories\ThirdModelRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class ThirdModelController extends AppBaseController
      */
     public function create()
     {
-        return view('third_models.create');
+        $showcases = Showcase::all();
+        return view('third_models.create',compact("showcases"));
     }
 
     /**
@@ -97,14 +99,14 @@ class ThirdModelController extends AppBaseController
     public function edit($id)
     {
         $thirdModel = $this->thirdModelRepository->find($id);
-
+        $showcases = Showcase::all();
         if (empty($thirdModel)) {
             Flash::error('3D Модель не найдена');
 
             return redirect(route('thirdModels.index'));
         }
 
-        return view('third_models.edit')->with('thirdModel', $thirdModel);
+        return view('third_models.edit')->with(['thirdModel'=>$thirdModel,"showcases"=>$showcases]);
     }
 
     /**
