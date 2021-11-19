@@ -22,7 +22,7 @@ Route::get("/single-tour/{alias}",[\App\Http\Controllers\Api\TourController::cla
 //ThirdModel
 Route::get("/thirdModels/{hall_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"thirdModels"]);
 Route::get("/single-thirdModel/{alias}",[\App\Http\Controllers\Api\ThirdModelController::class,"singlethirdModel"]);
-Route::get("/single-showcaseThirdModel/{showcase_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"singleShowCase"]);
+Route::get("/showcaseThirdModel/{showcase_id}",[\App\Http\Controllers\Api\ThirdModelController::class,"singleShowCase"]);
 //Showcase
 Route::get("/showcases/{alias}",[\App\Http\Controllers\Api\ShowcaseController::class,"singleShowCase"]);
 
