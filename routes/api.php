@@ -37,4 +37,4 @@ Route::get("/faq",[\App\Http\Controllers\Api\FaqController::class,"index"]);
 
 Route::resource('third_models', App\Http\Controllers\API\ThirdModelAPIController::class);
 
-Route::get('/send-form', );
+Route::get('/send-form', [\App\Http\Controllers\Api\OrderController::class, 'store']);
