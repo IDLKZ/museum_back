@@ -36,3 +36,6 @@ Route::get("model3d/{alias}",[\App\Http\Controllers\HomeController::class,"model
 
 
 Route::resource('showcases', App\Http\Controllers\ShowcaseController::class);
+
+
+Route::resource('orders', App\Http\Controllers\OrderController::class);
