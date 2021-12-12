@@ -38,3 +38,9 @@ Route::get("/faq",[\App\Http\Controllers\Api\FaqController::class,"index"]);
 Route::resource('third_models', App\Http\Controllers\API\ThirdModelAPIController::class);
 
 Route::post('/send-form', [\App\Http\Controllers\Api\OrderController::class, 'store']);
+
+Route::get("/services",[\App\Http\Controllers\Api\ServiceController::class,"index"]);
+Route::get("/serviceSingle/{alias}",[\App\Http\Controllers\Api\ServiceController::class,"singleService"]);
+
+Route::get("/events",[\App\Http\Controllers\Api\EventController::class,"index"]);
+Route::get("/singleEvent/{alias}",[\App\Http\Controllers\Api\EventController::class,"singleEvent"]);

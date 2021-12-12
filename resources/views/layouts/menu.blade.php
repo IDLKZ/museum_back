@@ -72,12 +72,35 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('services.index') }}"
+       class="nav-link {{ Request::is('services*') ? 'active' : '' }}">
+        <i class="fas fa-briefcase"></i>
+        <p>Услуги</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('events.index') }}"
+       class="nav-link {{ Request::is('events*') ? 'active' : '' }}">
+        <i class="fas fa-calendar-check"></i>
+        <p>Мероприятия</p>
+    </a>
+</li>
 
 <li class="nav-item">
     <a href="{{ route('fAQS.index') }}"
        class="nav-link {{ Request::is('fAQS*') ? 'active' : '' }}">
         <i class="fas fa-question"></i>
         <p>F.A.Q.</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('orders.index') }}"
+       class="nav-link {{ Request::is('orders*') ? 'active' : '' }}">
+        <i class="fas fa-envelope"></i>
+        <p>Почта</p>
     </a>
 </li>
 
@@ -94,11 +117,12 @@
 
 
 
-<li class="nav-item">
-    <a href="{{ route('orders.index') }}"
-       class="nav-link {{ Request::is('orders*') ? 'active' : '' }}">
-        <p>Orders</p>
-    </a>
-</li>
+
+
+
+
+
+
+
 
 
