@@ -4,7 +4,6 @@
         <tr>
             <th>Зал</th>
             <th>Изображение</th>
-            <th>Изображения текстуры</th>
             <th>Наименование на русском</th>
             <th>Наименование на казахском</th>
             <th>Наименование на английском</th>
@@ -34,7 +33,6 @@
             <tr>
                 <td>{{ $showcase->hall->title }}</td>
             <td><img src="{{ $showcase->getFile("image") }}" width="200px"></td>
-            <td>{{ $showcase->alias }}</td>
             <td>{{ $showcase->title_ru }}</td>
             <td>{{ $showcase->title_kz }}</td>
             <td>{{ $showcase->title_en }}</td>

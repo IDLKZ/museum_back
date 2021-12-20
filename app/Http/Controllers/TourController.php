@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTourRequest;
 use App\Http\Requests\UpdateTourRequest;
+use App\Models\Tour;
 use App\Repositories\TourRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class TourController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $tours = $this->tourRepository->all();
+        $tours = Tour::orderBy("created_at","DESC")->paginate(20);
 
         return view('tours.index')
             ->with('tours', $tours);

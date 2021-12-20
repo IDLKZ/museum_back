@@ -28,8 +28,8 @@
                 @include('halls.table')
 
                 <div class="card-footer clearfix">
-                    <div class="float-right">
-
+                    <div class="d-flex justify-content-center">
+                        {{$halls->links()}}
                     </div>
                 </div>
             </div>

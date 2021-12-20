@@ -39,7 +39,7 @@
                 <td>{{ $thirdModel->hall->title_ru}} </td>
             <td>{{ $thirdModel->wavefront }}</td>
             <td>{{ $thirdModel->texture }}</td>
-            <td>{{ $thirdModel->texture_image }}</td>
+            <td><img src="{{ $thirdModel->getFile("texture_image")}}" style="max-width: 320px"></td>
             <td>{{ $thirdModel->alias }}</td>
             <td>{{ $thirdModel->title_ru }}</td>
             <td>{{ $thirdModel->title_kz }}</td>

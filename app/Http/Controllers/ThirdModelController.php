@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateThirdModelRequest;
 use App\Http\Requests\UpdateThirdModelRequest;
 use App\Models\Showcase;
+use App\Models\ThirdModel;
 use App\Repositories\ThirdModelRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class ThirdModelController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $thirdModels = $this->thirdModelRepository->all();
+        $thirdModels = ThirdModel::orderBy("created_at","DESC")->paginate(20);
 
         return view('third_models.index')
             ->with('thirdModels', $thirdModels);

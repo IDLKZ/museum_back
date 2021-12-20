@@ -28,8 +28,8 @@
                 @include('tours.table')
 
                 <div class="card-footer clearfix">
-                    <div class="float-right">
-
+                    <div class="d-flex justify-content-center">
+                        {{$tours->links()}}
                     </div>
                 </div>
             </div>

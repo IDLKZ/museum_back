@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateHallRequest;
 use App\Http\Requests\UpdateHallRequest;
+use App\Models\Hall;
 use App\Repositories\HallRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class HallController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $halls = $this->hallRepository->all();
+        $halls = Hall::orderBy("created_at","DESC")->paginate(20);
 
         return view('halls.index')
             ->with('halls', $halls);

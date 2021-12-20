@@ -28,8 +28,8 @@
                 @include('news.table')
 
                 <div class="card-footer clearfix">
-                    <div class="float-right">
-
+                    <div class="d-flex justify-content-center">
+                        {{$news->links()}}
                     </div>
                 </div>
             </div>

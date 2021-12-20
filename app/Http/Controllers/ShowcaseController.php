@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateShowcaseRequest;
 use App\Http\Requests\UpdateShowcaseRequest;
+use App\Models\Showcase;
 use App\Repositories\ShowcaseRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class ShowcaseController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $showcases = $this->showcaseRepository->all();
+        $showcases = Showcase::orderBy("created_at","DESC")->paginate(15);
 
         return view('showcases.index')
             ->with('showcases', $showcases);

@@ -28,8 +28,8 @@
                 @include('showcases.table')
 
                 <div class="card-footer clearfix">
-                    <div class="float-right">
-
+                    <div class="d-flex justify-content-center">
+                        {{$showcases->links()}}
                     </div>
                 </div>
             </div>

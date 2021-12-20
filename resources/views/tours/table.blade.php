@@ -39,7 +39,6 @@
             <td>{{ $tour->next_tour ? $tour->nextTour->title_ru : "-"}}</td>
             <td><img src="{{ $tour->getFile("image") }}"  style="max-width: 120px"> </td>
             <td><img src="{{ $tour->getFile("panorama") }}" style="max-width: 120px"> </td>
-            <td>{{ $tour->alias }}</td>
             <td>{{ $tour->title_ru }}</td>
             <td>{{ $tour->title_kz }}</td>
             <td>{{ $tour->title_en }}</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use App\Models\Event;
 use App\Repositories\EventRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class EventController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $events = $this->eventRepository->all();
+        $events = Event::orderBy("created_at","DESC")->paginate(15);
 
         return view('events.index')
             ->with('events', $events);
