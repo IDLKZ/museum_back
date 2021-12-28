@@ -44,3 +44,6 @@ Route::get("/serviceSingle/{alias}",[\App\Http\Controllers\Api\ServiceController
 
 Route::get("/events",[\App\Http\Controllers\Api\EventController::class,"index"]);
 Route::get("/singleEvent/{alias}",[\App\Http\Controllers\Api\EventController::class,"singleEvent"]);
+
+Route::get("/surveys",[\App\Http\Controllers\Api\SurveyController::class,"index"]);
+Route::get("/survey/{alias}",[\App\Http\Controllers\Api\SurveyController::class,"singleSurvey"]);

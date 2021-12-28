@@ -95,7 +95,13 @@
         <p>F.A.Q.</p>
     </a>
 </li>
-
+<li class="nav-item">
+    <a href="{{ route('surveys.index') }}"
+       class="nav-link {{ Request::is('surveys*') ? 'active' : '' }}">
+        <i class="fas fa-question"></i>
+        <p>Опросы</p>
+    </a>
+</li>
 <li class="nav-item">
     <a href="{{ route('orders.index') }}"
        class="nav-link {{ Request::is('orders*') ? 'active' : '' }}">
@@ -114,6 +120,9 @@
         @csrf
     </form>
 </li>
+
+
+
 
 
 

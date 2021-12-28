@@ -11,20 +11,6 @@
             <th>Наименование на французском</th>
             <th>Наименование на испанском</th>
             <th>Наименование на турецком</th>
-            <th>Аудио на русском</th>
-            <th>Аудио на казахском</th>
-            <th>Аудио на английском</th>
-            <th>Аудио на немецком</th>
-            <th>Аудио на французском</th>
-            <th>Аудио на испанском</th>
-            <th>Аудио на турецком</th>
-            <th>Видео ссылка на русском</th>
-            <th>Видео ссылка на казахском</th>
-            <th>Видео ссылка на английском</th>
-            <th>Видео ссылка на немецком</th>
-            <th>Видео ссылка на французском</th>
-            <th>Видео ссылка на испанском</th>
-            <th>Видео ссылка на турецком</th>
             <th colspan="3">Действия</th>
         </tr>
         </thead>
@@ -40,20 +26,6 @@
             <td>{{ $showcase->title_fr }}</td>
             <td>{{ $showcase->title_es }}</td>
             <td>{{ $showcase->title_tr }}</td>
-            <td>{{ $showcase->audio_ru }}</td>
-            <td>{{ $showcase->audio_kz }}</td>
-            <td>{{ $showcase->audio_en }}</td>
-            <td>{{ $showcase->audio_de }}</td>
-            <td>{{ $showcase->audio_fr }}</td>
-            <td>{{ $showcase->audio_es }}</td>
-            <td>{{ $showcase->audio_tr }}</td>
-            <td>{{ $showcase->video_ru }}</td>
-            <td>{{ $showcase->video_kz }}</td>
-            <td>{{ $showcase->video_en }}</td>
-            <td>{{ $showcase->video_de }}</td>
-            <td>{{ $showcase->video_fr }}</td>
-            <td>{{ $showcase->video_es }}</td>
-            <td>{{ $showcase->video_tr }}</td>
                 <td width="120">
 
                     <div class='btn-group'>

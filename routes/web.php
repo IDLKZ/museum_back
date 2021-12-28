@@ -40,3 +40,6 @@ Route::get("model3d/{alias}",[\App\Http\Controllers\HomeController::class,"model
 
 
 
+
+
+Route::resource('surveys', App\Http\Controllers\SurveyController::class);
