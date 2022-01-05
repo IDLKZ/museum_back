@@ -45,7 +45,7 @@ class CreateHallsTable extends Migration
             $table->string("video_fr",500)->nullable();
             $table->string("video_es",500)->nullable();
             $table->string("video_tr",500)->nullable();
-
+            $table->string("tour_url",500)->nullable();
             $table->timestamps();
         });
     }

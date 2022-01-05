@@ -20,15 +20,15 @@
 </li>
 
 
-<li class="nav-item">
-    <a href="{{ route('tours.index') }}"
-       class="nav-link {{ Request::is('tours*') ? 'active' : '' }}">
-        <p>
-            <i class="fas fa-calendar-check"></i>
-            Туры
-        </p>
-    </a>
-</li>
+{{--<li class="nav-item">--}}
+{{--    <a href="{{ route('tours.index') }}"--}}
+{{--       class="nav-link {{ Request::is('tours*') ? 'active' : '' }}">--}}
+{{--        <p>--}}
+{{--            <i class="fas fa-calendar-check"></i>--}}
+{{--            Туры--}}
+{{--        </p>--}}
+{{--    </a>--}}
+{{--</li>--}}
 
 <li class="nav-item">
     <a href="{{ route('showcases.index') }}"
