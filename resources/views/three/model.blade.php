@@ -91,7 +91,7 @@
             }
         });
         gltf.scene.scale.set(10,10,10) // scale here
-        camera.lookAt(gltf.position.x, gltf.position.y, gltf.position.z);
+        camera.lookAt(gltf.scene.position.x, gltf.scene.position.y, gltf.scene.position.z);
         scene.add( gltf.scene );
 
     } );
