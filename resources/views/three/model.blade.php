@@ -50,7 +50,7 @@
     const canvas = document.querySelector('#scene');
     var scene = new THREE.Scene();
     //scene.background = new THREE.Color( 0xFFffff );
-    var camera = new THREE.PerspectiveCamera( 1, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    var camera = new THREE.PerspectiveCamera( 100, window.innerWidth/window.innerHeight, 0.1, 1000 );
     camera.position.z = 20;
     const loader = new THREE.TextureLoader();
     let bgTexture = loader.load("/images/img.png",
@@ -85,7 +85,7 @@
 
     const gltfLoader = new THREE.GLTFLoader();
     gltfLoader.load( Obj, function ( gltf ) {
-        gltf.position.x -= 60
+        camera.lookAt(gtlf.position);
         scene.add( gltf.scene );
 
     } );
