@@ -78,7 +78,7 @@ trait FileUploader
     {
         if($file == null) { return; }
         $this->removeFile($path);
-        $filename = Str::random(10) . '.' . $file->extension();
+        $filename = Str::random(10) . '.' . $file->getClientOriginalExtension();
         $file->storeAs('uploads', $filename);
         $this->$path = $filename;
         $this->save();
