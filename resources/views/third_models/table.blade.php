@@ -138,8 +138,8 @@
                                 class='btn btn-success btn-xs'>
                             <i class="fas fa-qrcode"></i>
                         </button>
-                        @if($thirdModel->wavefront)
                         {!! Form::close() !!}
+                        @if($thirdModel->wavefront)
                         <a href="{{ route('model3d',$thirdModel->alias) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-cube"></i>
