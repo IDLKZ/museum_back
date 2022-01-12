@@ -85,7 +85,9 @@
 
     const gltfLoader = new THREE.GLTFLoader();
     gltfLoader.load( Obj, function ( gltf ) {
-        camera.lookAt(gtlf.position);
+        gltf.scene.scale.multiplyScalar(1 / 100); // adjust scalar factor to match your scene scale
+        gltf.scene.position.x = 20; // once rescaled, position the model where needed
+        gltf.scene.position.z = -20;
         scene.add( gltf.scene );
 
     } );
