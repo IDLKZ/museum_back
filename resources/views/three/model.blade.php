@@ -31,16 +31,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+<!-- GLTFLoader.js -->
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js"></script>
 
 <script type="module">
-    import * as THREE from 'https://cdn.skypack.dev/three@0.134.0';
+
+
+
     import {OBJLoader} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/OBJLoader.js';
     import {OrbitControls} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/controls/OrbitControls.js';
-    import {MTLLoader} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/MTLLoader.js';
+    //import {MTLLoader} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/MTLLoader.js';
 
     let Obj = @json($model->wavefront);
-    let Mtl = @json($model->texture);
-    let TextureImage = @json($model->texture_image);
+    {{--let Mtl = @json($model->texture);--}}
+    {{--let TextureImage = @json($model->texture_image);--}}
 
     const canvas = document.querySelector('#scene');
     var scene = new THREE.Scene();
@@ -51,9 +56,9 @@
     let bgTexture = loader.load("/images/img.png",
         function ( texture ) {
             var img = texture.image;
-            bgWidth= img.width;
-            bgHeight = img.height;
-            resize();
+            var bgWidth= img.width;
+            var bgHeight = img.height;
+
         } );
     scene.background = bgTexture;
     var renderer = new THREE.WebGLRenderer({canvas});
@@ -68,7 +73,7 @@
     var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,99%)'), 1.0);
     keyLight.position.set(-100, 0, 100);
 
-    var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,1%)'), 0.75);
+    var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 0.75);
     fillLight.position.set(100, 0, 100);
 
     var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -78,31 +83,38 @@
     scene.add(fillLight);
     scene.add(backLight);
 
-    var mtlLoader = new MTLLoader();
-    mtlLoader.setResourcePath('/uploads/');
-    mtlLoader.setPath('/uploads/');
-    mtlLoader.load(Mtl, function (materials) {
+    const gltfLoader = new THREE.GLTFLoader();
+    gltfLoader.load( Obj, function ( gltf ) {
 
-        materials.preload();
+        scene.add( gltf.scene );
 
-        var objLoader = new OBJLoader();
-        objLoader.setMaterials(materials);
-        objLoader.setPath('/uploads/');
-        objLoader.load(Obj, function (object) {
+    } );
 
-            var texture = new THREE.TextureLoader().load("/uploads/" + TextureImage);
-            object.traverse(function (child) {   // aka setTexture
-                if (child instanceof THREE.Mesh) {
-                    child.material.map = texture;
-                }
-            });
-            object.position.y -= 0;
-            scene.add(object);
-
-
-        });
-
-    });
+    // var mtlLoader = new MTLLoader();
+    // mtlLoader.setResourcePath('/uploads/');
+    // mtlLoader.setPath('/uploads/');
+    // mtlLoader.load(Mtl, function (materials) {
+    //
+    //     materials.preload();
+    //
+    //     var objLoader = new OBJLoader();
+    //     objLoader.setMaterials(materials);
+    //     objLoader.setPath('/uploads/');
+    //     objLoader.load(Obj, function (object) {
+    //
+    //         var texture = new THREE.TextureLoader().load("/uploads/" + TextureImage);
+    //         object.traverse(function (child) {   // aka setTexture
+    //             if (child instanceof THREE.Mesh) {
+    //                 child.material.map = texture;
+    //             }
+    //         });
+    //         object.position.y -= 0;
+    //         scene.add(object);
+    //
+    //
+    //     });
+    //
+    // });
 
     var animate = function () {
         requestAnimationFrame( animate );

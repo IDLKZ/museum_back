@@ -5,8 +5,6 @@
             <th>Изображение</th>
             <th>Зал</th>
         <th>3д объект</th>
-        <th>Текстура</th>
-        <th>Изображения текстуры</th>
             <th>Наименование на русском</th>
             <th>Наименование на казахском</th>
             <th>Наименование на английском</th>
@@ -38,8 +36,6 @@
                 <td><img src="{{ $thirdModel->getFile("image")}}" style="max-width: 320px"> </td>
                 <td>{{ $thirdModel->hall->title_ru}} </td>
             <td>{{ $thirdModel->wavefront }}</td>
-            <td>{{ $thirdModel->texture }}</td>
-            <td><img src="{{ $thirdModel->getFile("texture_image")}}" style="max-width: 320px"></td>
             <td>{{ $thirdModel->alias }}</td>
             <td>{{ $thirdModel->title_ru }}</td>
             <td>{{ $thirdModel->title_kz }}</td>
@@ -142,11 +138,13 @@
                                 class='btn btn-success btn-xs'>
                             <i class="fas fa-qrcode"></i>
                         </button>
+                        @if($thirdModel->wavefront)
                         {!! Form::close() !!}
                         <a href="{{ route('model3d',$thirdModel->alias) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-cube"></i>
                         </a>
+                        @endif
                         <a href="{{ route('thirdModels.show', [$thirdModel->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>

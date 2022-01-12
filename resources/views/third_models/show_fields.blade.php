@@ -11,19 +11,6 @@
     <p>{{ $thirdModel->wavefront }}</p>
 </div>
 
-<!-- Texture Field -->
-<div class="col-sm-12">
-    {!! Form::label('texture', 'Текстура:') !!}
-    <p>{{ $thirdModel->texture }}</p>
-</div>
-
-<!-- Texture Image Field -->
-<div class="col-sm-12">
-    {!! Form::label('texture_image', 'Изображение текстуры:') !!}
-    <hr>
-    <img src="{{ $thirdModel->getFile("texture_image") }}" style="max-width: 320px">
-</div>
-
 
 <!-- Title Ru Field -->
 <div class="col-sm-12">

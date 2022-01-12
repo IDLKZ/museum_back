@@ -163,9 +163,7 @@ class ThirdModel extends Model
     public static $rules = [
         'hall_id' => 'required|exists:halls,id',
         'image' => 'required|file|image|max:100000',
-        'wavefront' => 'required|file|max:100000',
-        'texture' => 'required|file|max:100000',
-        'texture_image' => 'required|image|max:100000',
+        'wavefront' => 'sometimes|file|max:100000',
         'title_ru' => 'required|string|max:500',
         'title_kz' => 'required|string|max:500',
         'title_en' => 'required|string|max:500',

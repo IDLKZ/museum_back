@@ -19,6 +19,7 @@ class ThirdModelController extends AppBaseController
 
     public function __construct(ThirdModelRepository $thirdModelRepo)
     {
+        //phpinfo();
         $this->thirdModelRepository = $thirdModelRepo;
     }
 
@@ -58,12 +59,17 @@ class ThirdModelController extends AppBaseController
     public function store(CreateThirdModelRequest $request)
     {
         $input = $request->all();
+        if($file = $request->file("wavefront")){
+            if(!in_array($file->extension(),["glb","gltf"])){
+                Flash::error('Загрузите файл формата glb","gltf');
+
+                return  redirect()->back();
+            }
+        }
 
         $thirdModel = $this->thirdModelRepository->create($input);
         $thirdModel->uploadFile($request["image"],"image");
         $thirdModel->uploadFile($request["wavefront"],"wavefront");
-        $thirdModel->uploadFile($request["texture_image"],"texture_image");
-        $thirdModel->uploadFile($request["texture"],"texture");
         $thirdModel->uploadAudio($request);
         Flash::success('3D модель экспоната успешно сохранена.');
 
@@ -131,8 +137,6 @@ class ThirdModelController extends AppBaseController
         $thirdModel = $this->thirdModelRepository->update($request->all(), $id);
         $thirdModel->uploadFile($request["image"],"image");
         $thirdModel->uploadFile($request["wavefront"],"wavefront");
-        $thirdModel->uploadFile($request["texture_image"],"texture_image");
-        $thirdModel->uploadFile($request["texture"],"texture");
         $thirdModel->uploadAudio($request);
         Flash::success('3D модель успешно обновлена.');
 

@@ -18,23 +18,9 @@
 
 <!-- Wavefront Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('wavefront', 'Обьект .obj(Wavefront):') !!}
-    {!! Form::file('wavefront', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
+    {!! Form::label('wavefront', 'Обьект расширением glb/gltf (Необязательно для загрузки):') !!}
+    {!! Form::file('wavefront', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500,]) !!}
 </div>
-
-<!-- Texture Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('texture', 'Текстура (.mlt):') !!}
-    {!! Form::file('texture', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
-</div>
-
-<!-- Texture Image Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('texture_image', 'Изображения текстуры:') !!}
-    {!! Form::file('texture_image', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500]) !!}
-</div>
-
-
 
 <!-- Title Ru Field -->
 <div class="form-group col-sm-6">
