@@ -30,6 +30,7 @@ class HomeController extends Controller
 
     public function models($alias){
         $model =  ThirdModel::firstWhere("alias",$alias);
-        return view("three.model",compact("model"));
+        $wavefront = $model->getFiles("wavefront");
+        return view("three.model",compact("wavefront"));
     }
 }
