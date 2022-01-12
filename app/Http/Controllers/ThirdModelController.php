@@ -59,14 +59,6 @@ class ThirdModelController extends AppBaseController
     public function store(CreateThirdModelRequest $request)
     {
         $input = $request->all();
-        if($file = $request->file("wavefront")){
-            if(!in_array($file->extension(),["glb","gltf"])){
-                Flash::error('Загрузите файл формата glb","gltf');
-
-                return  redirect()->back();
-            }
-        }
-
         $thirdModel = $this->thirdModelRepository->create($input);
         $thirdModel->uploadFile($request["image"],"image");
         $thirdModel->uploadFile($request["wavefront"],"wavefront");
