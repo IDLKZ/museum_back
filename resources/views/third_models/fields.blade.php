@@ -206,7 +206,7 @@
             })
 
             function autoSelect(){
-                $('#showcases').find('option').remove().end().append('<option>Не выбранно</option>').attr("value",null);
+                $('#showcases').find('option').remove().end().append(<option value="">Не выбранно</option>);
                 halls = $("#halls").val();
                 if(showcases.length > 0){
                     for(let optionItem = 0; optionItem < showcases.length; optionItem++){
