@@ -43,7 +43,7 @@
     import {OrbitControls} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/controls/OrbitControls.js';
     //import {MTLLoader} from 'https://cdn.skypack.dev/three@0.134.0/examples/jsm/loaders/MTLLoader.js';
 
-    let Obj = {!! json_encode($model->wavefront) !!};;
+    let Obj = {!! json_encode($model["wavefront"]) !!};
     {{--let Mtl = @json($model->texture);--}}
     {{--let TextureImage = @json($model->texture_image);--}}
 
