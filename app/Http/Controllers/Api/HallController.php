@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HallController extends Controller
 {
     function allHall(){
-        $halls = Hall::with(["galleries","tours","thirdModels"])->orderBy('title_ru', 'desc')->get();
+        $halls = Hall::with(["galleries","tours","thirdModels"])->orderBy('title_ru', 'asc')->get();
         return response()->json($halls);
     }
 
