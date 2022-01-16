@@ -3,19 +3,19 @@
         <thead>
         <tr>
             <th>Вопрос на русском</th>
-        <th>Вопрос на английском</th>
-        <th>Вопрос на казахском</th>
-        <th>Вопрос на немецком</th>
-        <th>Вопрос на французском</th>
-        <th>Вопрос на испанском</th>
-        <th>Вопрос на турецком</th>
-        <th>Ответ на русском</th>
-        <th>Ответ на английском</th>
-        <th>Ответ на казахском</th>
-        <th>Ответ на немецком(необязательно)</th>
-        <th>Ответ на французском(необязательно)</th>
-        <th>Ответ на испанском(необязательно)</th>
-        <th>Ответ на турецком(необязательно)</th>
+            <th>Вопрос на английском</th>
+            <th>Вопрос на казахском</th>
+{{--            <th>Вопрос на немецком</th>--}}
+{{--            <th>Вопрос на французском</th>--}}
+{{--            <th>Вопрос на испанском</th>--}}
+{{--            <th>Вопрос на турецком</th>--}}
+            <th>Ответ на русском</th>
+            <th>Ответ на английском</th>
+            <th>Ответ на казахском</th>
+{{--            <th>Ответ на немецком(необязательно)</th>--}}
+{{--            <th>Ответ на французском(необязательно)</th>--}}
+{{--            <th>Ответ на испанском(необязательно)</th>--}}
+{{--            <th>Ответ на турецком(необязательно)</th>--}}
             <th colspan="3">Действия</th>
         </tr>
         </thead>
@@ -23,19 +23,19 @@
         @foreach($fAQS as $fAQ)
             <tr>
                 <td>{{ $fAQ->question_ru }}</td>
-            <td>{{ $fAQ->question_en }}</td>
-            <td>{{ $fAQ->question_kz }}</td>
-            <td>{{ $fAQ->question_de }}</td>
-            <td>{{ $fAQ->question_fr }}</td>
-            <td>{{ $fAQ->question_es }}</td>
-            <td>{{ $fAQ->question_tr }}</td>
-            <td>{{ $fAQ->answer_ru }}</td>
-            <td>{{ $fAQ->answer_en }}</td>
-            <td>{{ $fAQ->answer_kz }}</td>
-            <td>{{ $fAQ->answer_de }}</td>
-            <td>{{ $fAQ->answer_fr }}</td>
-            <td>{{ $fAQ->answer_es }}</td>
-            <td>{{ $fAQ->answer_tr }}</td>
+                <td>{{ $fAQ->question_en }}</td>
+                <td>{{ $fAQ->question_kz }}</td>
+{{--                <td>{{ $fAQ->question_de }}</td>--}}
+{{--                <td>{{ $fAQ->question_fr }}</td>--}}
+{{--                <td>{{ $fAQ->question_es }}</td>--}}
+{{--                <td>{{ $fAQ->question_tr }}</td>--}}
+                <td>{{ Str::limit($fAQ->answer_ru, 150) }}</td>
+                <td>{{ Str::limit($fAQ->answer_en, 150) }}</td>
+                <td>{{ Str::limit($fAQ->answer_kz, 150) }}</td>
+{{--                <td>{{ $fAQ->answer_de }}</td>--}}
+{{--                <td>{{ $fAQ->answer_fr }}</td>--}}
+{{--                <td>{{ $fAQ->answer_es }}</td>--}}
+{{--                <td>{{ $fAQ->answer_tr }}</td>--}}
                 <td width="120">
                     {!! Form::open(['route' => ['fAQS.destroy', $fAQ->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

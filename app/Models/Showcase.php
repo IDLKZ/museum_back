@@ -55,6 +55,7 @@ class Showcase extends Model
     use Sluggable;
     use FileUploader;
     use Sluggable;
+
     public $table = 'showcases';
 
     const CREATED_AT = 'created_at';

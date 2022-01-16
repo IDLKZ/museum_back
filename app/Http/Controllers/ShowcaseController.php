@@ -31,7 +31,6 @@ class ShowcaseController extends AppBaseController
     public function index(Request $request)
     {
         $showcases = Showcase::orderBy("created_at","DESC")->paginate(15);
-
         return view('showcases.index')
             ->with('showcases', $showcases);
     }

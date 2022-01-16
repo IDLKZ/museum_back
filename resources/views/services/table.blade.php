@@ -3,27 +3,29 @@
         <thead>
         <tr>
             <th>Изображение</th>
-        <th>Наименование на русском</th>
-        <th>Наименование на казахском</th>
-        <th>Наименование на английском</th>
-        <th>Наименование на немецком</th>
-        <th>Наименование на французском</th>
-        <th>Наименование на испанском</th>
-        <th>Наименование на турецком</th>
+            <th>Наименование на русском</th>
+            <th>Наименование на казахском</th>
+            <th>Наименование на английском</th>
+{{--            <th>Наименование на немецком</th>--}}
+{{--            <th>Наименование на французском</th>--}}
+{{--            <th>Наименование на испанском</th>--}}
+{{--            <th>Наименование на турецком</th>--}}
             <th colspan="3">Действия</th>
         </tr>
         </thead>
         <tbody>
         @foreach($services as $service)
             <tr>
-                <td>{{ $service->image }}</td>
-            <td>{{ $service->title_ru }}</td>
-            <td>{{ $service->title_kz }}</td>
-            <td>{{ $service->title_en }}</td>
-            <td>{{ $service->title_de }}</td>
-            <td>{{ $service->title_fr }}</td>
-            <td>{{ $service->title_es }}</td>
-            <td>{{ $service->title_tr }}</td>
+                <td>
+                    <div style='width: 200px;height: 200px;background: url("{{ $service->getFile("image") }}") no-repeat center;background-size: contain'></div>
+                </td>
+                <td>{{ $service->title_ru }}</td>
+                <td>{{ $service->title_kz }}</td>
+                <td>{{ $service->title_en }}</td>
+{{--                <td>{{ $service->title_de }}</td>--}}
+{{--                <td>{{ $service->title_fr }}</td>--}}
+{{--                <td>{{ $service->title_es }}</td>--}}
+{{--                <td>{{ $service->title_tr }}</td>--}}
                 <td width="120">
                     {!! Form::open(['route' => ['services.destroy', $service->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
